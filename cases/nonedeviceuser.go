@@ -1,21 +1,16 @@
 package cases
 
 import (
-	"example/cloud/raport/lib"
 	"fmt"
+	"github.com/KMACEL/cloud-report/lib"
 )
 
 //NoneDeviceUser Nil Control
 type NoneDeviceUser struct {
 }
 
-var (
-	readLib lib.ReadExel
-)
-
 //StartCase StartNoneDevice
 func (n NoneDeviceUser) StartCase() {
-	readLib = lib.ReadExel{}
 	readLib.SetReadFilePath(Path)
 }
 

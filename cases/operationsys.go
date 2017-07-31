@@ -1,14 +1,15 @@
 package cases
 
 import (
-	"example/cloud/raport/lib"
 	"fmt"
+	"github.com/KMACEL/cloud-report/lib"
 )
 
+//OperationSystem is
 type OperationSystem struct{}
 
+//StartCase is
 func (n OperationSystem) StartCase() {
-	readLib = lib.ReadExel{}
 	if Path != "" {
 		readLib.SetReadFilePath(Path)
 	} else {
@@ -16,6 +17,7 @@ func (n OperationSystem) StartCase() {
 	}
 }
 
+//OperationSystem is
 func (n OperationSystem) OperationSystem(getDeviceID int, getOsVersion int) {
 	var device string
 	var deviceUser string
