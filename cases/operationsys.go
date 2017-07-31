@@ -2,6 +2,8 @@ package cases
 
 import (
 	"fmt"
+	"strconv"
+
 	"github.com/KMACEL/cloud-report/lib"
 )
 
@@ -21,13 +23,15 @@ func (n OperationSystem) StartCase() {
 func (n OperationSystem) OperationSystem(getDeviceID int, getOsVersion int) {
 	var device string
 	var deviceUser string
+	var count int
+
 	writeLib := lib.CreateExel{}
 	writeLib.Open()
 	writeLib.Create("OperationSystemVersion", "OS")
 
 	writeLib.CreateNewRow()
 	writeLib.WriteByOne("DeviceID : ")
-	writeLib.WriteByOne("None Operation System's Device ID")
+	writeLib.WriteByOne("Description : None Operation System's Device ID")
 
 	readLib.ReadColumnByTwo(getDeviceID, getOsVersion,
 		func(arg string) {
@@ -39,8 +43,10 @@ func (n OperationSystem) OperationSystem(getDeviceID int, getOsVersion int) {
 			if deviceUser != "" && arg2 == "" {
 				writeLib.CreateNewRow()
 				writeLib.WriteByOne(device)
+				count++
 			}
 		})
-
+	writeLib.CreateRow()
+	writeLib.WriteByOne("Size : " + strconv.Itoa(count))
 	fmt.Println("Finish OperationSys")
 }

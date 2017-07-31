@@ -44,6 +44,19 @@ func (c CreateExel) Create(setFileName string, sheetName string) {
 func (c CreateExel) CreateNewRow() {
 	row = sheet.AddRow()
 	cell = row.AddCell()
+
+	//cell = sheet.Cell(5, 3)
+	if err != nil {
+		fmt.Println("CreateNewRow")
+		fmt.Printf(err.Error())
+	}
+}
+
+//CreateRow is
+func (c CreateExel) CreateRow() {
+	row = sheet.AddRow()
+	//cell = sheet.Cell(0, 0)
+	cell = sheet.AddRow().Sheet.Cell(3, 5)
 	if err != nil {
 		fmt.Println("CreateNewRow")
 		fmt.Printf(err.Error())

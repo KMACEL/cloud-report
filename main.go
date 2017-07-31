@@ -9,8 +9,8 @@ func main() {
 	config.SetConfig("/home/acel/Desktop/deneme.xlsx")
 	config.StartCase()
 
-	noneDevice := cases.NoneDeviceUser{}
-	noneDevice.NoneDeviceID(1)
+	//noneDevice := cases.NoneDeviceUser{}
+	//noneDevice.NoneDeviceID(1)
 
 	opertaionSys := cases.OperationSystem{}
 	opertaionSys.OperationSystem(1, 12)
